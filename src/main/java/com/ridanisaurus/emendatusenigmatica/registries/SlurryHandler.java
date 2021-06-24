@@ -29,8 +29,8 @@ import com.google.common.collect.Table;
 import com.ridanisaurus.emendatusenigmatica.util.Materials;
 import com.ridanisaurus.emendatusenigmatica.util.ProcessedMaterials;
 import com.ridanisaurus.emendatusenigmatica.util.Reference;
-import mekanism.api.chemical.slurry.Slurry;
-import mekanism.api.chemical.slurry.SlurryBuilder;
+// import mekanism.api.chemical.slurry.Slurry;
+// import mekanism.api.chemical.slurry.SlurryBuilder;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.registries.DeferredRegister;
@@ -39,29 +39,29 @@ import java.util.Arrays;
 import java.util.List;
 
 public class SlurryHandler {
-	public static final DeferredRegister<Slurry> SLURRIES = DeferredRegister.create(Slurry.class, Reference.MOD_ID);
+	// public static final DeferredRegister<Slurry> SLURRIES = DeferredRegister.create(Slurry.class, Reference.MOD_ID);
 
-	public static Table<ProcessedMaterials, Materials, RegistryObject<Slurry>> backingSlurryTable;
+	// public static Table<ProcessedMaterials, Materials, RegistryObject<Slurry>> backingSlurryTable;
 
-	public static void slurryInit() {
-		ImmutableTable.Builder<ProcessedMaterials, Materials, RegistryObject<Slurry>> builder = new ImmutableTable.Builder<>();
-		for (ProcessedMaterials processedMaterial : ProcessedMaterials.values()) {
-			for (Materials material : Materials.values()) {
-				List<String> toCreate = Arrays.asList(material.type);
-				if (processedMaterial == ProcessedMaterials.CLEAN_SLURRY && toCreate.contains("CleanSlurry")) {
-					builder.put(processedMaterial, material, SLURRIES.register("clean_" + material.id, () -> {
-						ResourceLocation ore = new ResourceLocation("forge", "ores/" + material.id);
-						return new Slurry(SlurryBuilder.clean().color(material.tintColour));
-					}));
-				}
-				if (processedMaterial == ProcessedMaterials.DIRTY_SLURRY && toCreate.contains("DirtySlurry")) {
-					builder.put(processedMaterial, material, SLURRIES.register("dirty_" + material.id, () -> {
-						ResourceLocation ore = new ResourceLocation("forge", "ores/" + material.id);
-						return new Slurry(SlurryBuilder.dirty().color(material.tintColour));
-					}));
-				}
-			}
-		}
-		backingSlurryTable = builder.build();
-	}
+	// public static void slurryInit() {
+	// 	ImmutableTable.Builder<ProcessedMaterials, Materials, RegistryObject<Slurry>> builder = new ImmutableTable.Builder<>();
+	// 	for (ProcessedMaterials processedMaterial : ProcessedMaterials.values()) {
+	// 		for (Materials material : Materials.values()) {
+	// 			List<String> toCreate = Arrays.asList(material.type);
+	// 			if (processedMaterial == ProcessedMaterials.CLEAN_SLURRY && toCreate.contains("CleanSlurry")) {
+	// 				builder.put(processedMaterial, material, SLURRIES.register("clean_" + material.id, () -> {
+	// 					ResourceLocation ore = new ResourceLocation("forge", "ores/" + material.id);
+	// 					return new Slurry(SlurryBuilder.clean().color(material.tintColour));
+	// 				}));
+	// 			}
+	// 			if (processedMaterial == ProcessedMaterials.DIRTY_SLURRY && toCreate.contains("DirtySlurry")) {
+	// 				builder.put(processedMaterial, material, SLURRIES.register("dirty_" + material.id, () -> {
+	// 					ResourceLocation ore = new ResourceLocation("forge", "ores/" + material.id);
+	// 					return new Slurry(SlurryBuilder.dirty().color(material.tintColour));
+	// 				}));
+	// 			}
+	// 		}
+	// 	}
+	// 	backingSlurryTable = builder.build();
+	// }
 }

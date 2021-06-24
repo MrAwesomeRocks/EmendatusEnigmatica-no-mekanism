@@ -26,10 +26,10 @@ package com.ridanisaurus.emendatusenigmatica.datagen;
 
 import com.ridanisaurus.emendatusenigmatica.registries.*;
 import com.ridanisaurus.emendatusenigmatica.util.*;
-import mekanism.api.chemical.slurry.Slurry;
 import net.minecraft.data.DataGenerator;
 import net.minecraftforge.common.data.LanguageProvider;
 import net.minecraftforge.fluids.ForgeFlowingFluid;
+// import mekanism.api.chemical.slurry.Slurry;
 
 import java.util.Arrays;
 import java.util.List;
@@ -141,22 +141,22 @@ public class LangGen extends LanguageProvider {
         }
 
         // Clean Slurry
-        if (processedMaterial == ProcessedMaterials.CLEAN_SLURRY && toCreate.contains("CleanSlurry")  && !material.id.equals("arcane")) {
-          StringBuilder sb = new StringBuilder();
-          sb.append("Clean ");
-          sb.append(material.localisedName);
-          sb.append(" Slurry");
-          add(SlurryHandler.backingSlurryTable.get(processedMaterial, material).get(), sb.toString());
-        }
+        // if (processedMaterial == ProcessedMaterials.CLEAN_SLURRY && toCreate.contains("CleanSlurry")  && !material.id.equals("arcane")) {
+        //   StringBuilder sb = new StringBuilder();
+        //   sb.append("Clean ");
+        //   sb.append(material.localisedName);
+        //   sb.append(" Slurry");
+        //   add(SlurryHandler.backingSlurryTable.get(processedMaterial, material).get(), sb.toString());
+        // }
 
         // Dirty Slurry
-        if (processedMaterial == ProcessedMaterials.DIRTY_SLURRY && toCreate.contains("DirtySlurry")  && !material.id.equals("arcane")) {
-          StringBuilder sb = new StringBuilder();
-          sb.append("Dirty ");
-          sb.append(material.localisedName);
-          sb.append(" Slurry");
-          add(SlurryHandler.backingSlurryTable.get(processedMaterial, material).get(), sb.toString());
-        }
+        // if (processedMaterial == ProcessedMaterials.DIRTY_SLURRY && toCreate.contains("DirtySlurry")  && !material.id.equals("arcane")) {
+        //   StringBuilder sb = new StringBuilder();
+        //   sb.append("Dirty ");
+        //   sb.append(material.localisedName);
+        //   sb.append(" Slurry");
+        //   add(SlurryHandler.backingSlurryTable.get(processedMaterial, material).get(), sb.toString());
+        // }
 
         // Clumps
         if (processedMaterial == ProcessedMaterials.CLUMP && toCreate.contains("Clump")  && !material.id.equals("arcane")) {
@@ -260,8 +260,8 @@ public class LangGen extends LanguageProvider {
     add(ItemHandler.backingItemTable.get(ProcessedMaterials.CHUNK, Materials.ARCANE).get(), "Mana Chunk");
     add(ItemHandler.backingItemTable.get(ProcessedMaterials.CLUSTER, Materials.ARCANE).get(), "Mana Cluster");
     add(ItemHandler.backingItemTable.get(ProcessedMaterials.GEM, Materials.ARCANE).get(), "Mana Gem");
-    add(SlurryHandler.backingSlurryTable.get(ProcessedMaterials.DIRTY_SLURRY, Materials.ARCANE).get(), "Dirty Mana Slurry");
-    add(SlurryHandler.backingSlurryTable.get(ProcessedMaterials.CLEAN_SLURRY, Materials.ARCANE).get(), "Clean Mana Slurry");
+    // add(SlurryHandler.backingSlurryTable.get(ProcessedMaterials.DIRTY_SLURRY, Materials.ARCANE).get(), "Dirty Mana Slurry");
+    // add(SlurryHandler.backingSlurryTable.get(ProcessedMaterials.CLEAN_SLURRY, Materials.ARCANE).get(), "Clean Mana Slurry");
     add(ItemHandler.backingItemTable.get(ProcessedMaterials.CLUMP, Materials.ARCANE).get(), "Mana Clump");
     add(ItemHandler.backingItemTable.get(ProcessedMaterials.CRYSTAL, Materials.ARCANE).get(), "Mana Crystal");
     add(ItemHandler.backingItemTable.get(ProcessedMaterials.DIRTY_DUST, Materials.ARCANE).get(), "Dirty Mana Dust");
@@ -281,9 +281,9 @@ public class LangGen extends LanguageProvider {
     add(ItemHandler.DUST_WOOD.get(), "Sawdust");
   }
 
-  private void add(Slurry slurry, String name) {
-    add(slurry.getTranslationKey(), name);
-  }
+  // private void add(Slurry slurry, String name) {
+  //   add(slurry.getTranslationKey(), name);
+  // }
 //  private void add(String something, String name) {
 //    add("fluid.emendatusenigmatica.molten_" + something , name);
 //  }

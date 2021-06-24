@@ -66,7 +66,7 @@ public class EmendatusEnigmatica {
         ContainerHandler.CONTAINERS.register(modEventBus);
         OreHandler.BLOCKS.register(modEventBus);
         ItemHandler.ITEMS.register(modEventBus);
-        SlurryHandler.SLURRIES.register(modEventBus);
+        // SlurryHandler.SLURRIES.register(modEventBus);
 
         modEventBus.addListener(this::setup);
         modEventBus.addListener(this::construct);
@@ -88,7 +88,7 @@ public class EmendatusEnigmatica {
         ItemHandler.oreItems();
         BlockHandler.blockInit();
         ItemHandler.itemInit();
-        SlurryHandler.slurryInit();
+        // SlurryHandler.slurryInit();
     }
 
     public void setup(FMLCommonSetupEvent event) {
